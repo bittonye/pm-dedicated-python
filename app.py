@@ -1,11 +1,9 @@
 #!/usr/bin/env python
-
-from subprocess import call
 import sys
 import json
 
 def sayHello(action):
-    res = action.params["NAME"]
+    res = action["params"]["NAME"]
     print("Hello " + res)
 
 if len(sys.argv) < 2:
@@ -15,7 +13,7 @@ if len(sys.argv) < 2:
 json_string = sys.argv[1]
 action = json.loads(json_string)
 
-if action.method.name == "hello":
+if action["method"]["name"] == "hello":
     sayHello(action)
 
 exit(0)
