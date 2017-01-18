@@ -16,6 +16,6 @@ json_string = sys.argv[1]
 action = json.loads(json_string)
 
 if action.method.name == "hello":
-    return sayHello(action)
+    sayHello(action)
 
 exit(0)
